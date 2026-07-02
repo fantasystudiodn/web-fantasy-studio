@@ -180,10 +180,10 @@ if (teamCarousel && teamStage && teamDotsWrap && teamMembers.length) {
   }
 
   function goToTeam(index) {
-  activeTeamIndex = (index + teamMembers.length) % teamMembers.length;
-  renderTeamSlider();
-  startTeamAutoSlide();
-}
+    activeTeamIndex = (index + teamMembers.length) % teamMembers.length;
+    renderTeamSlider();
+    restartTeamAuto();
+  }
 
   function nextTeam() {
     goToTeam(activeTeamIndex + 1);

@@ -180,10 +180,10 @@ if (teamCarousel && teamStage && teamDotsWrap && teamMembers.length) {
   }
 
   function goToTeam(index) {
-  activeTeamIndex = (index + teamMembers.length) % teamMembers.length;
-  renderTeamSlider();
-  startTeamAutoSlide();
-}
+    activeTeamIndex = (index + teamMembers.length) % teamMembers.length;
+    renderTeamSlider();
+    restartTeamAuto();
+  }
 
   function nextTeam() {
     goToTeam(activeTeamIndex + 1);
@@ -212,6 +212,14 @@ if (teamCarousel && teamStage && teamDotsWrap && teamMembers.length) {
     diff < 0 ? nextTeam() : prevTeam();
   });
 
+  teamCarousel.addEventListener('mouseenter', () => {
+    clearInterval(teamAutoTimer);
+  });
+
+  teamCarousel.addEventListener('mouseleave', () => {
+    restartTeamAuto();
+  });
+
   function startTeamAutoSlide() {
   clearInterval(teamAutoTimer);
 
@@ -221,6 +229,6 @@ if (teamCarousel && teamStage && teamDotsWrap && teamMembers.length) {
   }, 3000);
 }
 
-    renderTeamSlider();
-    startTeamAutoSlide();
+renderTeamSlider();
+startTeamAutoSlide();
 }

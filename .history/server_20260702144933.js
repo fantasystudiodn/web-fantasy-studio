@@ -6,7 +6,6 @@ const PORT = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
-
 app.use(express.static(path.join(__dirname, 'public')));
 
 const stats = [
@@ -91,16 +90,22 @@ const values = [
   }
 ];
 
-app.get('/', (req, res) => {
-  res.render('home', {
-    title: 'Fantasy Studio | Fantasy Becomes Reality'
-  });
-});
+// app.get('/', (req, res) => {
+//   res.render('home', {
+//     title: 'Fantasy Studio | Home'
+//   });
+// });
 
-app.use((req, res) => {
-  res.status(404).redirect('/');
-});
+// app.get('/thanh-vien-team', (req, res) => {
+//   res.render('team', {
+//     title: 'Thành viên & Team | Fantasy Studio',
+//     activePage: 'team',
+//     stats,
+//     members,
+//     values
+//   });
+// });
 
 app.listen(PORT, () => {
-  console.log(`Fantasy Studio đang chạy tại http://localhost:${PORT}`);
+  console.log(`Fantasy Studio is running at http://localhost:${PORT}/thanh-vien-team`);
 });

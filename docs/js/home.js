@@ -30,32 +30,32 @@ const teamMembers = [
   {
     name: 'Hoàng Duy Nhất',
     role: 'Founder / Product Owner / Project Manager',
-    image: '/assets/team-slides/hoang-duy-nhat.jpg'
+    image: './assets/team-slides/hoang-duy-nhat.jpg'
   },
   {
     name: 'Minh Hồ',
     role: '2D Game Artist',
-    image: '/assets/team-slides/minh-hoa.jpg'
+    image: './assets/team-slides/minh-hoa.jpg'
   },
   {
     name: 'Đặng Nguyễn Hưng',
     role: 'System Designer & Developer',
-    image: '/assets/team-slides/dang-nguyen-hung.jpg'
+    image: './assets/team-slides/dang-nguyen-hung.jpg'
   },
   {
     name: 'Võ Phương Nhi',
     role: 'Game Designer & Developer',
-    image: '/assets/team-slides/vo-phuong-nhi.jpg'
+    image: './assets/team-slides/vo-phuong-nhi.jpg'
   },
   {
     name: 'Đính Dương',
     role: 'System Designer & Developer',
-    image: '/assets/team-slides/dinh-duong.jpg'
+    image: './assets/team-slides/dinh-duong.jpg'
   },
   {
     name: 'Lê Thái Lâm',
     role: 'Game Designer & Developer',
-    image: '/assets/team-slides/le-thai-lam.jpg'
+    image: './assets/team-slides/le-thai-lam.jpg'
   }
 ];
 

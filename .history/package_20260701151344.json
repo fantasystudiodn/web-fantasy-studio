@@ -5,8 +5,6 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-  "build:pages": "node scripts/build-pages.js",
-  "preview:pages": "npx serve docs",
     "dev": "nodemon server.js"
   },
   "dependencies": {

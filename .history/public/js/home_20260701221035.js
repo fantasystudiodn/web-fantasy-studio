@@ -183,7 +183,7 @@ if (teamCarousel && teamStage && teamDotsWrap && teamMembers.length) {
   activeTeamIndex = (index + teamMembers.length) % teamMembers.length;
   renderTeamSlider();
   startTeamAutoSlide();
-}
+    }
 
   function nextTeam() {
     goToTeam(activeTeamIndex + 1);
