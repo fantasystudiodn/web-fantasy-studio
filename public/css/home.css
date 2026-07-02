@@ -1587,3 +1587,284 @@ a {
     font-size: 15px;
   }
 }
+
+/* =========================
+   FOOTER
+========================= */
+
+.site-footer {
+  position: relative;
+  padding: 120px 0 34px;
+  color: #ffffff;
+  background: #202020;
+  overflow: hidden;
+
+  clip-path: polygon(
+    0 0,
+    13% 0,
+    15% 18px,
+    68% 18px,
+    70% 0,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+}
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 15% 30%,
+      rgba(122, 25, 255, 0.08),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 82% 65%,
+      rgba(35, 207, 255, 0.06),
+      transparent 30%
+    );
+}
+
+.footer-container {
+  position: relative;
+  z-index: 2;
+
+  width: min(1080px, calc(100% - 48px));
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1.15fr 0.8fr;
+  gap: 90px;
+}
+
+.footer-column h3 {
+  margin: 0 0 34px;
+
+  color: #f5f5f5;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
+}
+
+.footer-links a,
+.footer-contact a {
+  position: relative;
+
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.65;
+  text-transform: uppercase;
+
+  transition:
+    color 0.22s ease,
+    transform 0.22s ease;
+}
+
+.footer-links a::after {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  bottom: -5px;
+
+  width: 0;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    var(--purple),
+    var(--blue)
+  );
+
+  transition: width 0.22s ease;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+.footer-links a:hover::after {
+  width: 100%;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.footer-contact a:first-child {
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: none;
+}
+
+.footer-contact a:first-child:hover {
+  color: var(--cyan);
+}
+
+/* Đường phân cách dưới footer */
+
+.footer-bottom {
+  position: relative;
+  z-index: 2;
+
+  width: min(1080px, calc(100% - 48px));
+  margin: 78px auto 0;
+  padding-top: 28px;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 24px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: max-content;
+}
+
+.footer-brand-icon {
+  display: grid;
+  place-items: center;
+}
+
+.footer-brand-text {
+  display: grid;
+
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: -0.7px;
+}
+
+.footer-brand-text strong {
+  color: var(--cyan);
+}
+
+.footer-bottom p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.38);
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.back-to-top {
+  justify-self: end;
+
+  color: rgba(255, 255, 255, 0.52);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+
+  transition:
+    color 0.22s ease,
+    transform 0.22s ease;
+}
+
+.back-to-top:hover {
+  color: var(--cyan);
+  transform: translateY(-3px);
+}
+
+/* Giúp navbar cuộn đến footer không bị che */
+
+.site-footer {
+  scroll-margin-top: 90px;
+}
+
+/* =========================
+   FOOTER RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .site-footer {
+    padding-top: 100px;
+
+    clip-path: polygon(
+      0 0,
+      18% 0,
+      22% 14px,
+      68% 14px,
+      72% 0,
+      100% 0,
+      100% 100%,
+      0 100%
+    );
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px 50px;
+  }
+
+  .footer-bottom {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-bottom p {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}
+
+@media (max-width: 620px) {
+  .site-footer {
+    padding: 82px 0 28px;
+  }
+
+  .footer-container {
+    width: min(100% - 36px, 520px);
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .footer-column h3 {
+    margin-bottom: 24px;
+  }
+
+  .footer-links {
+    gap: 18px;
+  }
+
+  .footer-bottom {
+    width: min(100% - 36px, 520px);
+    margin-top: 56px;
+
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .footer-bottom p {
+    grid-column: auto;
+    grid-row: auto;
+    text-align: left;
+  }
+
+  .back-to-top {
+    justify-self: start;
+  }
+}
